@@ -1,0 +1,107 @@
+const { static } = require('express');
+const express = require('express');
+const app = express();
+const path = require("path");  /* including path module*/
+const hbs = require("hbs");
+const request = require ("request");
+const axios = require('axios');
+
+const qs = require('querystring');
+
+
+
+app.use(express.static('../library'))
+
+
+//require("./db/conn.js")
+
+const port =process.env.port || 4000;
+
+/* const static_path = path.join(__dirname, "../Public");
+const tmeplate_path = path.join(__dirname, "../template/views"); // we have to explicitly tell the new path of index.hbs"
+
+const partials_path = path.join(__dirname, "../template/partials"); */
+
+
+const static_path = path.join(__dirname, "/");
+
+app.use(express.static(static_path));
+
+app.set("view engine" ,"hbs")
+
+//app.set("views", tmeplate_path);    /*we have to explicitly tell the new path of index.hbs"*/
+//hbs.registerPartials(partials_path);
+
+app.get('/',function(req, res){
+    res.type('html');
+    res.sendFile('login-form.html', {root: __dirname} )
+})
+
+app.get('/callback', ({ query: { code } }, res) => {
+    const body = {
+      //client_id: process.env.GITHUB_CLIENT_ID,
+      //client_secret: process.env.GITHUB_SECRET,
+       
+      //client_id:  process.env.XM-BIND-ID-CLIENT_ID, 
+      //code,
+     
+    };
+
+
+    console.log("code is ", code);
+
+
+
+
+/*app.get("/", (req, res) => {
+   // res.send ("Hello World from HOME PAGE****")
+res.render("login-form")  //to render HBS page 
+   
+});*/
+// CODE for POST method 
+var  code1 = code;
+console.log('code 1 is --> ' , code1);
+
+const data ={
+        
+    //code:                'RYn3NFjyxp118ekpPVbjYlpxf_yMNS4bsCKhqwt_oQo',
+    code:                    code1,
+    redirect_uri:       'http://localhost:4000/callback',
+    client_id:          'fcbc32f6.06508e4e.dev_90c44f0c.bindid.io',
+    client_secret:       '0ffeaa86-69ed-4bdb-8241-8f6b131beac3',
+    grant_type:            'authorization_code'
+
+
+};
+
+// set the headers
+const config = {
+headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+}
+};
+
+axios.post('https://signin.bindid-sandbox.io/token', qs.stringify(data), config)
+.then((res) => {
+console.log(`Status: ${res.status}`);
+
+//alert(`Status: ${res.status}`);
+
+//res.sendFile('login-form.html', {root: __dirname});
+console.log('Body: ', res.data);
+
+
+}).catch((err) => {
+console.error(err);
+});
+
+console.log("-----++-->");
+res.redirect('http://localhost:4000/welcome.html');
+});
+
+
+
+app.listen(port,() => {
+
+    console.log(`server is running at port**** --> ${port}`);
+});

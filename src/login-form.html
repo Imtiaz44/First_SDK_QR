@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="login-page.js"></script>
+
+  <link rel="import" href="welcome.html">
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CPromise.prototype.finally%2CTextDecoder%2CTextEncoder%2CObject.entries"></script>
+  <script src="https://signin.bindid-sandbox.io/bindid-sdk/transmit-bind-id-sdk.js" defer></script>
+
+  <meta name="xm-bind-id-client_id" content="fcbc32f6.06508e4e.dev_90c44f0c.bindid.io">
+  <meta name="xm-bind-id-redirect_uri" content="http://localhost:4000/callback">
+  <meta name="xm-bind-id-scope" content="bindid_network_info email">
+
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Application Login</h1>
+    
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    <button class='xm-bind-id-button'>BINDID - Login</button>
+
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit">
+      
+    </form>
+  
+  </main>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

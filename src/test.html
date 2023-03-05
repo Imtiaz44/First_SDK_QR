@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>MyBindID</title>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" sizes="18x18" href="/assets/img/b-id-fav.png">
+	<link rel="icon" type="image/png" sizes="36X36" href="/assets/img/b-id-fav@2x.png">
+	<link rel="icon" type="image/png" sizes="54x54" href="/assets/img/b-id-fav@3x.png">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/apple-icon.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/img/apple-icon-precomposed.png">
+	<style type="text/css">
+		@font-face {
+			font-family: 'Material Icons';
+			font-style: normal;
+			font-weight: 400;
+			src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.woff) format('woff');
+		}
+
+		.material-icons {
+			font-family: 'Material Icons';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 24px;
+			line-height: 1;
+			letter-spacing: normal;
+			text-transform: none;
+			display: inline-block;
+			white-space: nowrap;
+			word-wrap: normal;
+			direction: ltr;
+			font-feature-settings: 'liga';
+		}
+
+		@font-face {
+			font-family: 'Material Icons';
+			font-style: normal;
+			font-weight: 400;
+			src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+		}
+
+		.material-icons {
+			font-family: 'Material Icons';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 24px;
+			line-height: 1;
+			letter-spacing: normal;
+			text-transform: none;
+			display: inline-block;
+			white-space: nowrap;
+			word-wrap: normal;
+			direction: ltr;
+			-webkit-font-feature-settings: 'liga';
+			-webkit-font-smoothing: antialiased;
+		}
+	</style>
+	<link id="BINDID_BRANDING_CSS" href="" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3iQ.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTk3iazbXWjgevT5.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTA3iazbXWjgevT5.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTs3iazbXWjgevT5.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTo3iazbXWjgevT5.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		@font-face {
+			font-family: 'Nunito';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3iazbXWjgeg.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+	<script nonce="MJeQMhg/XLhojovrzE0d3g==">
+		window.BINDID_CONFIG={"myBindIdClientConfig":{"clientId":"mybindid","redirectUri":"https://my.bindid-sandbox.io/manage","nonce":"ef60c8fd-7685-477b-820c-0391a2abf10a"},"mode":0,"allowJourneyDebugging":false,"appId":"mybindid","authServer":"https://my.bindid-sandbox.io","initiateJourneyDebugging":false,"xmSdkLogLevel":"debug","enableCustodianFlow":true};window.interdeal={"sitekey":"ed66df554e4bc757078599581e80b854","domains":{"js":"https://aacdn.nagich.com/","acc":"https://access.nagich.com/"},"Position":"left","Menulang":"EN","btnStyle":{"vPosition":["80%",null],"scale":["0.5","0.5"],"icon":{"type":11,"shape":"circle","outline":true},"color":{"main":"#0D18CA","second":"#fff"}}};
+	</script>
+	<link rel="stylesheet" href="styles.45794cbb8d484ae37713.css">
+</head>
+
+<body>
+	<app-root></app-root>
+	<script id="accessibility_script_placeholder" nonce=""></script>
+	<script src="runtime.15b8082bf9e36ff129b4.js" defer=""></script>
+	<script src="polyfills-es5.f00a840bbb0c26ebc63b.js" nomodule="" defer=""></script>
+	<script src="polyfills.6a1b55ca9f2ed46ba064.js" defer=""></script>
+	<script src="main.54e2c2f81a5d5c315214.js" defer=""></script>
+</body>
+<script src="https://signin.bindid-sandbox.io/bindid-sdk/transmit-bind-id-sdk.js" defer></script>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>  **** TESTING BIND --ID*****</title>
+    <link href="welcome-page.css" rel="stylesheet">
+    
+    <script> alert("*****Application Home page*****"); 
+    </script>
+
+    <script defer src="login-page.js"></script>
+
+    <meta name="xm-bind-id-client_id" content="fcbc32f6.06508e4e.dev_90c44f0c.bindid.io">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CPromise.prototype.finally%2CTextDecoder%2CTextEncoder%2CObject.entries"></script>
+    <script src="https://signin.bindid-sandbox.io/bindid-sdk/transmit-bind-id-sdk.js" defer></script>
+   
+   
+    
+       
+    <script>
+
+     
+        //alert("12345");
+        //var query_string=window.location.search)
+       
+       //sendAuthCodeToServer(query_string);
+   
+       //function sendAuthCodeToServer(authCode) {
+       // Add code to send the authCode to your application server here
+       //alert("code is :" + authCode);
+       // forpost (authCode);
+       // }; 
+   
+      function handleError(err) {
+       // Add code to process the authentication error here
+      }
+     
+     /* window.XmBindId.processRedirectResponse()
+       .then(res => { sendAuthCodeToServer(res.code); },
+           err => { handleError(err); })*/
+          
+           //function invokeBindId() {
+       
+                
+        function invokeBindId() {
+               alert('IN FUNC');
+             initializeSDK();
+               function initializeSDK() {
+    window.XmBindId.initialize({
+        clientId: 'fcbc32f6.06508e4e.dev_90c44f0c.bindid.io',
+        apiCompat: window.XmBindId.XmBindIdApiCompatibilityLevel.UseLatest
+    }).then(res => {
+        alert('SDK Initialized');
+        window.XmBindId.signTransaction({
+           redirectUri: 'http://localhost:4000/callback',
+           customMessage: 'Approve Payment',
+           transactionSigningData: {
+               displayData: {
+                   payee:         'CitiBank',
+                   paymentAmount: '$100',
+                   paymentMethod: 'Card'
+               },
+               essential: true
+           }
+       }).then(res => {
+           console.log(success);
+       }, err => {
+           console.log(error);
+       })
+});
+};
+               
+         
+  }
+   
+   
+    </script>
+ 
+</head>
+
+<body>
+       
+
+ 
+
+</body>
+
+
+    
+    <h1>
+       Application Payment page 
+    </h1>  
+    
+    <div id="container">
+        <div id="header">
+            <a href="/" title="Return to home welcome-page" id="logo"></a>
+        </div>
+    
+        </script>
+        <form id="Account-information">
+            <fieldset>
+
+                <legend> Profile Info</legend>
+                <label for="contact_name">Payee </label>
+                <input type="text" id="contact_name" placeholder="Enter Payee here"><br>
+                Payment Amount : <input type="email" placeholder ="Enter Payment amount here"><br>
+                Payment Method : <input type="text" name=accountnumber placeholder ="Payment method"><br>
+                <br>
+                Gender:<br>
+                <input type="radio" name ="Gender">Male<br>
+                <input type="radio" name ="Gender">Female<br>
+                <br><br>
+                <!--  <input type="submit" value="payment" id="account-form-submit" > --> 
+                <input type="submit" value="payment"  onclick="invokeBindId()">
+                <input type="reset" value="clear my Info">
+                
+            </fieldset>
+        </form>
+    </div>
+    <input type="submit" value="payment"  onclick="invokeBindId()">
+</body>
+</html> 
